@@ -1,7 +1,7 @@
-mod configuration;
+use std::process::ExitCode;
+use hmc::config;
 
-fn main()
-{
-    let mut conf = configuration::Config::default();
-    conf.init();
+fn main() -> ExitCode {
+    let conf = config::HmcConfig::load();
+    return ExitCode::SUCCESS;
 }
